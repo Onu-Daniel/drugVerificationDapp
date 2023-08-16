@@ -1,0 +1,217 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% of the viewport height */
+}
+
+.header {  
+  display: flex;
+  padding: 10px 40px;
+  width: 100%;
+  color: white;
+  background-color: #141311;
+}
+
+.header-text {
+  font-family: 'Arial Narrow';
+  font-weight: bold;
+}
+
+.logo {
+  margin-top: 12px;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.body, .user-body {
+  display: flex;  
+}
+
+.inside-body, .user-inside {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.user-inside {
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Additional styling for clarity */
+.inside-body:nth-child(odd), .user-inside:nth-child(even) {
+  background-color: white;
+  color: #141311;
+}
+
+.inside-body:nth-child(even), .user-inside:nth-child(odd) {
+  background-color: #141311;
+  color: white;
+}
+
+.button-body, .button-user {
+  font-size: large;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.button-body {
+  background-color: #141311;
+  color: white;
+  width: 150px;
+}
+
+.button-user {
+  background-color: white;
+  color: #141311;
+}
+
+.button-user:hover, .button-body:hover, .connect-wallet:hover {
+  background-color: red;
+  color: white;
+}
+
+.body-logo {
+  width: 70%;
+  height: 80%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 40px;
+  text-align: left;
+  color: #CCCCCC;
+  font-family: 'Arial Narrow';
+}
+
+a {
+  text-decoration: none;
+  color: #CCCCCC;
+}
+
+.search-bar {
+  padding: 5px;
+  border: 1px solid#141311;
+  border-radius: 5px;
+  width: 70%;
+  height: 7%;
+  font-family: 'Arial';
+}
+
+h2 {
+  font-family: 'Arial';
+}
+
+.table {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the table horizontally */
+  border: 1px solid #141311;
+  padding: 10px;
+  color: #141311;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #141311;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.animated-write-up {
+  padding: 40px;
+  background-color: #141311; /* Add background color or any other styling you prefer */
+}
+
+.typed-text {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.get-started{
+  margin-bottom: 0;
+}
+
+.topic {
+  color: white;
+}
+
+.signup-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rectangle {
+  width: 35%;
+  height: 90%;
+  background-color: #141311;
+  border-radius: 20px;
+  padding: 20px; /* Add padding for spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-inside {
+  margin-bottom: 15px;
+  font-size: large;
+  color: white;
+}
+.input-field {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+.input-field::placeholder {
+  text-indent: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.connect-wallet {
+  font-size: small;
+  border: none;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #141311;
+}
+
+.register-button {
+  width: 100%;
+  font-size: larger;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  color: white;
+  background-color: red;
+}
+
+.register-button:hover {
+  background-color: blue;
+}
