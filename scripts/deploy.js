@@ -1,8 +1,11 @@
 async function main() {
-  const Verify = await hre.ethers.getContractFactory("Verify");
+  // const Verify = await hre.ethers.getContractFactory("Verify");
+  // const verify = await Verify.deploy();
+
+  const Verify = await ethers.getContractFactory('Verify');
   const verify = await Verify.deploy();
 
-  await verify.deployed();
+  // await verify.deployed();
 
   console.log(
     `Verify deployed to: ${verify.address}`

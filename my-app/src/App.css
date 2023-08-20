@@ -100,9 +100,14 @@ html, body {
   font-family: 'Arial Narrow';
 }
 
-a {
+.footer a {
   text-decoration: none;
   color: #CCCCCC;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .search-bar {
@@ -163,17 +168,22 @@ h2 {
   height: 100vh;
 }
 
-.rectangle {
+.rectangle, .drugrect {
   width: 35%;
   height: 90%;
   background-color: #141311;
   border-radius: 20px;
-  padding: 20px; /* Add padding for spacing */
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.rectangle {
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding for spacing */
 }
 
 .form-inside {
@@ -181,14 +191,17 @@ h2 {
   font-size: large;
   color: white;
 }
-.input-field {
-  width: 100%;
-  height: 40px;
+.input-field, .druginput-field {
+  width: 100%; 
   border-radius: 5px;
   border: none;
 }
 
-.input-field::placeholder {
+.input-field {
+  height: 40px;
+}
+
+.input-field::placeholder, .druginput-field::placeholder {
   text-indent: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -199,11 +212,11 @@ h2 {
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
-  color: #141311;
+  color: white;
+  background-color: blue;
 }
 
-.register-button {
-  width: 100%;
+.register-button, .login-button {
   font-size: larger;
   border-radius: 5px;
   border: none;
@@ -212,6 +225,145 @@ h2 {
   background-color: red;
 }
 
-.register-button:hover {
+.register-button {
+  width: 100%;
+}
+
+.register-button:hover, .login-button:hover {
   background-color: blue;
+}
+
+.login-button {
+  width: 80%;
+}
+
+.text {
+  color: white;
+}
+
+.text a {
+  color: blue; 
+  text-decoration: underline; 
+}
+
+.text a:hover {
+  text-decoration: none; 
+  color: red;
+}
+
+.dashbody-container {
+  display: flex;
+  /* text-align: center; */
+}
+
+.dashbody {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  flex: 0 0 20%;
+  background-color: #141311;
+}
+
+.right {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.icons {
+  color: white;
+  margin: 40px 0 0 20px;
+  padding: 15px;
+}
+
+.icons:hover {
+  background-color: white;
+  color: #141311;
+}
+
+.icons a:hover {
+  color: #141311;
+}
+
+.top-rectangles {
+  display: flex;
+  justify-content: center;
+  height: 30%; /* Half of the right section */
+}
+
+.rec {
+  width: 30%; 
+  border: 1px solid #141311;
+  margin-top: 10px;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-bottom: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.half {
+  height: 50%; 
+}
+
+.half a {
+  color: #141311;
+}
+
+.half a:hover {
+  color: red;
+}
+
+.bottom-rectangle {
+  flex: 1; 
+}
+
+span {
+  font-size: x-large;
+}
+
+.heading {
+  margin-top: 50px;
+}
+
+.row {
+  display: flex;
+  border: none;
+  /* margin: 0; */
+  padding: 0;
+}
+
+.firstrow {
+  background-color: #141311;
+  color: white;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  border-bottom: 1px solid #141311;
+  border-right: 1px solid #141311;
+  text-align: center;
+}
+
+.druginput-field {
+  height: 35px;
+}
+
+.drugrect {
+  padding: 30px;
+}
+
+.drugrect h1 {
+  text-align: center;
+  color: white;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -24,6 +25,7 @@ const SignUp = () => {
                         </div>
                         
                         <button type="submit" className='register-button'>Register</button>
+                        <p className='text'>Have an account? <Link to={`/sign-in`}>Login</Link> </p>
                     </form>
 
                 </div>
