@@ -11,3 +11,5 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+# drugVerificationDapp
+This app is used to check the authenticity of drugs, thereby preventing the sales of counterfeit drugs.
