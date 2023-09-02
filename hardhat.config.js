@@ -3,10 +3,14 @@ require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.9",
+  solidity: "0.8.4",
+  etherscan: {
+    apiKey: process.env.API_KEY,
+  },
   networks: {
-    hardhat: {
-      chainId: 31337, // Arbitrary local chain ID
+    sepolia: {
+      url: process.env.SEPOLIA_URl,
+      accounts: [process.env.PRIVATE_KEY]
     },
   },
 };

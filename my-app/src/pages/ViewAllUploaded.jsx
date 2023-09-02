@@ -9,6 +9,7 @@ const ViewAll = () => {
         <div className="page-container">
             <Header />
             <div>
+                <h1 className='title'>All Uploaded Drugs</h1>
                 <div className='row firstrow'>
                     <div class="column">Drug ID</div>
                     <div class="column">Drug Name</div>

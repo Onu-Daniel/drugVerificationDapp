@@ -1,20 +1,31 @@
+const ethers = require('ethers');
+require('dotenv').config();
+
 async function main() {
-  // const Verify = await hre.ethers.getContractFactory("Verify");
-  // const verify = await Verify.deploy();
 
-  const Verify = await ethers.getContractFactory('Verify');
-  const verify = await Verify.deploy();
+  const url = process.env.SEPOLIA_URL;
 
-  // await verify.deployed();
+  let artifacts = await hre.artifacts.readArtifact("Verify");
 
-  console.log(
-    `Verify deployed to: ${verify.address}`
-  );
+  const provider = new ethers.providers.JsonRpcProvider(url);
+
+  let privateKey = process.env.PRIVATE_KEY;
+
+  let wallet = new ethers.Wallet(privateKey, provider);
+
+  // Create an instance of a Faucet Factory
+  let factory = new ethers.ContractFactory(artifacts.abi, artifacts.bytecode, wallet);
+
+  let verify = await factory.deploy();
+
+  console.log("Verify address:", verify.address);
+
+  await verify.deployed();
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
+main()
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.error(error);
+    process.exit(1);
 });

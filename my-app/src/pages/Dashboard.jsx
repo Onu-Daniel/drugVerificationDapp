@@ -22,6 +22,7 @@ const Dashboard = () => {
                     <div className="rec half"><Link to={`/view-all-drugs`}>View all uploaded Information<span>&#8594;</span></Link></div>
                     </div>
                     <div className="bottom-rectangle">
+                        <h2>All Uploaded Drugs</h2>
                         <div className='row firstrow'>
                             <div class="column">Drug ID</div>
                             <div class="column">Drug Name</div>

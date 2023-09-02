@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from "react";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom';
+import Verify from '../contracts/Verify.json';
+import { ethers } from 'ethers';
+
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const contractAddress = '0xCE6Ea6D0dDC93BAec1Fb79f44873DbEfc639175D';
+const contractABI = Verify.abi;
 
 
 const DrugUpload = () => {
@@ -13,29 +19,29 @@ const DrugUpload = () => {
                 <div className="drugrect">
                     <h1>Upload Drug Information</h1>
                     <div className='form-inside'>
-                        <label for="drugname">Drug Name:</label>
+                        <label htmlFor="drugname">Drug Name:</label>
                         <input type="" className="druginput-field" id="drugname" placeholder="Drug Name" />
                     </div>  
                     <div className='form-inside'>
-                        <label for="drugid">Drug ID:</label>
+                        <label htmlFor="drugid">Drug ID:</label>
                         <input type="" className="druginput-field" id="drugid" placeholder="Drug ID" />
                     </div>      
                     <div className='form-inside'>
-                        <label for="lotnumber">Lot Number:</label>
+                        <label htmlFor="lotnumber">Lot Number:</label>
                         <input type="" className="druginput-field" id="lotnumber" placeholder="Lot Number" />
                     </div>
                     <div className='form-inside'>
-                        <label for="batchnumber">Batch Number:</label>
+                        <label htmlFor="batchnumber">Batch Number:</label>
                         <input type="" className="druginput-field" id="batchnumber" placeholder="Batch Number" />
                     </div> 
                     <div className='form-inside'>
-                        <label for="expirydate">Expiry Date:</label>
+                        <label htmlFor="expirydate">Expiry Date:</label>
                         <input type="" className="druginput-field" id="expirydate" placeholder="Expiry Date" />
                     </div> 
-                    <div className='form-inside'>
-                        <label for="manufacturingdate">Manufacturing Date:</label>
-                        <input type="" className="druginput-field" id="manufacturingdate" placeholder="Manufacturing Date" />
-                    </div>  
+                    {/* <div className='form-inside'>
+                        <label htmlFor="manufacturerid">Manufacturing ID:</label>
+                        <input type="" className="druginput-field" id="manufacturerId" placeholder="Manufacturing ID" />
+                    </div>   */}
                     <button type="submit" className='register-button'>Upload Drug Info</button>
                 </div>
             </div>
