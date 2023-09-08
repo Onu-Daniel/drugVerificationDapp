@@ -111,4 +111,6 @@ contract Verify {
         drugName = drugInfo.drugName;
         drugId = drugInfo.drugId;
     }
+
+    
 }

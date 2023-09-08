@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -11,7 +11,7 @@ html, body {
   height: 100vh; /* 100% of the viewport height */
 }
 
-.header {  
+.header {
   display: flex;
   padding: 10px 40px;
   width: 100%;
@@ -20,7 +20,7 @@ html, body {
 }
 
 .header-text {
-  font-family: 'Arial Narrow';
+  font-family: "Arial Narrow";
   font-weight: bold;
 }
 
@@ -31,11 +31,13 @@ html, body {
   height: 30px;
 }
 
-.body, .user-body {
-  display: flex;  
+.body,
+.user-body {
+  display: flex;
 }
 
-.inside-body, .user-inside {
+.inside-body,
+.user-inside {
   flex: 1;
   display: flex;
   align-items: center;
@@ -46,28 +48,29 @@ html, body {
 .user-inside {
   flex-direction: column;
   align-items: center;
-  
 }
 
 /* Additional styling for clarity */
-.inside-body:nth-child(odd), .user-inside:nth-child(even) {
+.inside-body:nth-child(odd),
+.user-inside:nth-child(even) {
   background-color: white;
   color: #141311;
 }
 
-.inside-body:nth-child(even), .user-inside:nth-child(odd) {
+.inside-body:nth-child(even),
+.user-inside:nth-child(odd) {
   background-color: #141311;
   color: white;
 }
 
-.button-body, .button-user {
+.button-body,
+.button-user {
   font-size: large;
   border: none;
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
 }
-
 
 .button-body {
   background-color: #141311;
@@ -80,7 +83,9 @@ html, body {
   color: white;
 }
 
-.button-user:hover, .button-body:hover, .connect-wallet:hover {
+.button-user:hover,
+.button-body:hover,
+.connect-wallet:hover {
   background-color: red;
   color: white;
 }
@@ -96,13 +101,13 @@ html, body {
   width: 100%;
   padding: 10px 40px;
   text-align: left;
-  color: #CCCCCC;
-  font-family: 'Arial Narrow';
+  color: #cccccc;
+  font-family: "Arial Narrow";
 }
 
 .footer a {
   text-decoration: none;
-  color: #CCCCCC;
+  color: #cccccc;
 }
 
 a {
@@ -116,11 +121,11 @@ a {
   border-radius: 5px;
   width: 70%;
   height: 7%;
-  font-family: 'Arial';
+  font-family: "Arial";
 }
 
 h2 {
-  font-family: 'Arial';
+  font-family: "Arial";
 }
 
 .table {
@@ -153,7 +158,7 @@ h2 {
   font-weight: bold;
 }
 
-.get-started{
+.get-started {
   margin-bottom: 0;
 }
 
@@ -168,7 +173,8 @@ h2 {
   height: 100vh;
 }
 
-.rectangle, .drugrect {
+.rectangle,
+.drugrect {
   width: 35%;
   height: 90%;
   background-color: #141311;
@@ -177,8 +183,6 @@ h2 {
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-
-
 
 .rectangle {
   justify-content: center;
@@ -191,8 +195,9 @@ h2 {
   font-size: large;
   color: white;
 }
-.input-field, .druginput-field {
-  width: 100%; 
+.input-field,
+.druginput-field {
+  width: 100%;
   border-radius: 5px;
   border: none;
 }
@@ -201,7 +206,8 @@ h2 {
   height: 40px;
 }
 
-.input-field::placeholder, .druginput-field::placeholder {
+.input-field::placeholder,
+.druginput-field::placeholder {
   text-indent: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -216,7 +222,8 @@ h2 {
   background-color: blue;
 }
 
-.register-button, .login-button {
+.register-button,
+.login-button {
   font-size: larger;
   border-radius: 5px;
   border: none;
@@ -228,14 +235,13 @@ h2 {
   height: 40px;
 }
 
-
-
 .register-button {
   width: 100%;
   height: 55px;
 }
 
-.register-button:hover, .login-button:hover {
+.register-button:hover,
+.login-button:hover {
   background-color: blue;
 }
 
@@ -248,12 +254,12 @@ h2 {
 }
 
 .text a {
-  color: blue; 
-  text-decoration: underline; 
+  color: blue;
+  text-decoration: underline;
 }
 
 .text a:hover {
-  text-decoration: none; 
+  text-decoration: none;
   color: red;
 }
 
@@ -304,7 +310,7 @@ h2 {
 }
 
 .rec {
-  width: 30%; 
+  width: 30%;
   /* border: 1px solid #141311; */
   margin-top: 10px;
   margin-left: 70px;
@@ -323,7 +329,7 @@ h2 {
 } */
 
 .half {
-  height: 50%; 
+  height: 50%;
 }
 
 .half a {
@@ -331,11 +337,11 @@ h2 {
 }
 
 .half a:hover {
-  color: red;  
+  color: red;
 }
 
 .bottom-rectangle {
-  flex: 1; 
+  flex: 1;
 }
 
 span {
@@ -382,6 +388,4 @@ span {
 .title {
   display: flex;
   justify-content: center;
-
 }
-
