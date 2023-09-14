@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { ethers } from "ethers";
 import Verify from "../contracts/Verify.json";
 
-const contractAddress = "0xCE6Ea6D0dDC93BAec1Fb79f44873DbEfc639175D";
+const contractAddress = "0x9b486053c71cF377bA4bE0DEA3538bb86DAb020b"; // Replace with your contract address
 const contractABI = Verify.abi;
 
 const Home = () => {
@@ -14,6 +14,8 @@ const Home = () => {
   const [batchNumber, setBatchNumber] = useState("");
   const [drugName, setDrugName] = useState("");
   const [drugId, setDrugId] = useState("");
+  const [manufacturerName, setManufacturerName] = useState("");
+  const [manufacturerId, setManufacturerId] = useState("");
   const [contract, setContract] = useState(null);
 
   const handleTransactionHashChange = (e) => {
@@ -38,22 +40,19 @@ const Home = () => {
         ? transactionHashInput // Input already has "0x" prefix
         : "0x" + transactionHashInput; // Add "0x" prefix if missing
 
-      console.log(formattedTransactionHash);
+      // Call the getDrugInformation function on the contract
+      const result = await contract.getDrugInformation(formattedTransactionHash);
 
-      const result = await contract.getDrugInformationByTransactionHash(
-        formattedTransactionHash,
-        { gasLimit: 300000 } // Adjust the gas limit as needed
-      );
+      // Parse the result and set the state variables
       setTransactionHash(formattedTransactionHash);
-      setExpiryDate(result[0]);
-      setBatchNumber(result[1]);
-      setDrugName(result[2]);
-      setDrugId(result[3]);
+      setExpiryDate(new Date(result[4] * 1000).toLocaleDateString());
+      setBatchNumber(result[2].toString()); // Convert to string
+      setDrugName(result[0]);
+      setDrugId(result[1].toString()); // Convert to string
+      setManufacturerName(result[5]);
+      setManufacturerId(result[6].toString()); // Convert to string
     } catch (error) {
       console.error("Error:", error);
-      console.error("Error message:", error.message);
-      console.error("Error code:", error.code);
-      console.error("Error data:", error.data);
     }
   };
 
@@ -79,7 +78,15 @@ const Home = () => {
           <div className="table">
             <div className="row">
               <div className="label">Transaction Hash:</div>
-              <div className="value">{transactionHash}</div>
+              <div className="value" style={{ wordWrap: "break-word", maxWidth: "290px" }}>{transactionHash}</div>
+            </div>
+            <div className="row">
+              <div className="label">Manufacturer Name:</div>
+              <div className="value">{manufacturerName}</div>
+            </div>
+            <div className="row">
+              <div className="label">Manufacturer ID:</div>
+              <div className="value">{manufacturerId}</div>
             </div>
             <div className="row">
               <div className="label">Drug Name:</div>

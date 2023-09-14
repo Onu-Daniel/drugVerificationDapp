@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Verify from "../contracts/Verify.json";
 import { ethers } from "ethers";
 
-const contractAddress = "0xCE6Ea6D0dDC93BAec1Fb79f44873DbEfc639175D";
+const contractAddress = "0x9b486053c71cF377bA4bE0DEA3538bb86DAb020b";
 const contractABI = Verify.abi;
 
 const DrugUpload = () => {
@@ -58,8 +58,7 @@ const DrugUpload = () => {
       }
 
       // Call the smart contract function
-      const tx = await contract.registerDrugInformation(
-        manufacturerId,
+      const tx = await contract.registerNewDrug(
         drugIdValue,
         drugName,
         batchNumberValue,
@@ -78,9 +77,9 @@ const DrugUpload = () => {
       const manufacturerAddress = await signer.getAddress();
       setManufacturerAddress(manufacturerAddress);
 
-      // Fetch transaction ID
-      const transactionId = tx.hash; // Assuming 'tx' is the transaction object
-      setTransactionId(transactionId);
+// Fetch the lastTransactionHash from the contract
+const lastTxHash = await contract.lastTransactionHash();
+      setTransactionId(lastTxHash);
 
       console.log("Drug information uploaded successfully!");
     } catch (error) {
@@ -177,9 +176,8 @@ const DrugUpload = () => {
                   <p>Manufacturer ID: {manufacturerId}</p>
                   <p>Drug Name: {drugName}</p>
                   <p>Drug ID: {drugId}</p>
-                  <p>
-                    Transaction ID: {transactionId.slice(0, 43)} <br />
-                    {transactionId.slice(32)}
+                  <p style={{ wordWrap: "break-word", maxWidth: "290px" }}>
+                    Transaction ID: {transactionId}
                   </p>
                 </div>
               )}

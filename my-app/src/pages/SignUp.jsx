@@ -8,7 +8,7 @@ import RegistrationSuccessPopup from "../components/RegistrationSuccessPopup";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
-const contractAddress = "0xCE6Ea6D0dDC93BAec1Fb79f44873DbEfc639175D";
+const contractAddress = "0x9b486053c71cF377bA4bE0DEA3538bb86DAb020b";
 const contractABI = Verify.abi;
 
 const SignUp = () => {
